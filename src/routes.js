@@ -2,6 +2,7 @@ import { Router } from "express";
 import UsersController from "./controllers/usersController";
 import ClientsController from "./controllers/clientController";
 import SpacesController from "./controllers/spacesController";
+import LeasesController from "./controllers/leasesController";
 
 const routes = new Router();
 
@@ -24,5 +25,11 @@ routes.post("/spaces", SpacesController.create);
 routes.get("/spaces/:id/", SpacesController.read);
 routes.put("/spaces/:id/", SpacesController.update);
 routes.delete("/spaces/:id/", SpacesController.delete);
+
+routes.get("/leases", LeasesController.index);
+routes.post("/leases", LeasesController.create);
+routes.get("/leases/:id/", LeasesController.read);
+routes.put("/leases/:id/", LeasesController.update);
+routes.delete("/leases/:id/", LeasesController.delete);
 
 export default routes;
